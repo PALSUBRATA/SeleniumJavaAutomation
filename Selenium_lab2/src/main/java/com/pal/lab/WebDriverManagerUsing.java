@@ -2,19 +2,21 @@ package com.pal.lab;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class FirstScript {
+
+public class WebDriverManagerUsing {
 
 	public static void main(String[] args) {
 		
-		String chromeDriverPath= "C:\\Users\\subra\\git\\SeleniumJavaAutomation\\Selenium_lab2\\chromedriver.exe";
 		String url ="https://chromedriver.chromium.org/downloads";
 	
-		//setting up system property for browser
-		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+		
+		WebDriverManager.chromedriver().setup();
 		//initializing the driver
 		WebDriver driver = new ChromeDriver();
 		//navigate to the url
 		driver.get(url);
+		
 	}
 }
